@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Highlights</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div>
+                    <h1>Call Highlights</h1>
+                    <p class="subtitle">Track and analyze your daily call transcripts</p>
+                </div>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <section class="input-section">
+            <h2>Add New Transcript</h2>
+            <form id="transcriptForm">
+                <div class="form-group">
+                    <label for="transcriptDate">Date</label>
+                    <input type="date" id="transcriptDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="companyName">Company</label>
+                    <input 
+                        type="text" 
+                        id="companyName" 
+                        placeholder="Enter company name..."
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="transcriptText">Transcript</label>
+                    <textarea 
+                        id="transcriptText" 
+                        placeholder="Paste your call transcript here..."
+                        rows="8"
+                        required
+                    ></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Save Transcript</button>
+            </form>
+        </section>
+
+        <section class="insights-section">
+            <h2>Insights</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-label">Total Calls</div>
+                    <div class="insight-value" id="totalCalls">0</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-label">Total Words</div>
+                    <div class="insight-value" id="totalWords">0</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-label">Avg Words/Call</div>
+                    <div class="insight-value" id="avgWords">0</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-label">Most Active Day</div>
+                    <div class="insight-value" id="mostActiveDay">-</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <div class="history-header">
+                <h2>Call History</h2>
+                <div class="view-toggle">
+                    <button id="toggleView" class="btn-toggle">Show All</button>
+                </div>
+            </div>
+            <div id="callHistory" class="call-list">
+                <div class="empty-state">No calls saved yet. Add your first transcript above!</div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
